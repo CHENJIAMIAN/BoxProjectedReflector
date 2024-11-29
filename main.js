@@ -108,7 +108,7 @@ function loadCourt () {
     const dracoLoader = new DRACOLoader()
     dracoLoader.setDecoderPath('https://fastly.jsdelivr.net/gh/mrdoob/three.js@master/examples/jsm/libs/draco/gltf/') // Use a CDN or your local path
     loader.setDRACOLoader(dracoLoader)
-    loader.load('/court.glb', (gltf) => {
+    loader.load('./court.glb', (gltf) => {
         const courtScene = gltf.scene
         courtScene.traverse((object) => {
             if (object.isMesh) {
