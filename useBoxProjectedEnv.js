@@ -72,7 +72,7 @@ function boxProjectedEnvMap (shader, envMapPosition, envMapSize) {
         )}`
 }
 
-function applyBoxProjectedEnvMap (material, position, size) {
+function useBoxProjectedEnv (material, position, size) {
     material.onBeforeCompile = (shader) => {
         boxProjectedEnvMap(shader, position, size)
     }
@@ -80,4 +80,4 @@ function applyBoxProjectedEnvMap (material, position, size) {
     material.needsUpdate = true
 }
 
-export { applyBoxProjectedEnvMap }
+export { useBoxProjectedEnv }

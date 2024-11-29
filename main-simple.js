@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 import { RGBELoader } from 'three/addons/loaders/RGBELoader.js'
 import { EnvironmentMapCamera } from './EnvironmentMapCamera.js'
-import { applyBoxProjectedEnvMap } from './applyBoxProjectedEnvMap.js'
+import { useBoxProjectedEnv } from './useBoxProjectedEnv.js'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 // --- Main Scene ---
 window.THREE = THREE
@@ -78,7 +78,7 @@ scene.add(environmentMapCamera)
 const projectionPosition = new THREE.Vector3(0, -0.5, 0)
 const scale = 50
 const projectionSize = new THREE.Vector3(scale, scale / .0010, scale)
-applyBoxProjectedEnvMap(planeMaterial, projectionPosition, projectionSize)
+useBoxProjectedEnv(planeMaterial, projectionPosition, projectionSize)
 
 
 camera.position.z = 5

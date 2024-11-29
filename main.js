@@ -1,4 +1,4 @@
-import { applyBoxProjectedEnvMap } from './applyBoxProjectedEnvMap.js'
+import { useBoxProjectedEnv } from './useBoxProjectedEnv.js'
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import { HDRCubeTextureLoader } from 'three/addons/loaders/HDRCubeTextureLoader.js'
@@ -180,7 +180,7 @@ function updateFloor (config) {
     const projectionPosition = new THREE.Vector3(0, config.up, 0)
     const scale = config.scale
     const projectionSize = new THREE.Vector3(scale, scale, scale)
-    applyBoxProjectedEnvMap(floorMaterial, projectionPosition, projectionSize)
+    useBoxProjectedEnv(floorMaterial, projectionPosition, projectionSize)
 
     environmentMapCamera.update(renderer, scene)
 }
